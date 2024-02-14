@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Details</title>
+</head>
+
+<body>
+    <h5>Topic: {summary}</5>
+        <p>{formatted_start_time}</p>
+        <p>Time zone: {timezone}</p>
+        <p>Google Meet joining info</p>
+        <p>Video call link: {hangout_link}</p>
+        <p>Or dial:</p>
+        <p>{phone_numbers_str} PIN: {pin}</p>
+        <p>More phone numbers: <a
+                href="https://tel.meet/{hangout_link}?pin={pin}">https://tel.meet/{hangout_link}?pin={pin}</a></p>
+</body>
+
+</html>

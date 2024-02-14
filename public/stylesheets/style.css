@@ -1,0 +1,63 @@
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+} */
+
+
+/*** Categories & Courses ***/
+/* .category img,
+.course-item img {
+  transition: .5s;
+}
+
+.category a:hover img,
+.course-item:hover img {
+  transform: scale(1.1);
+} */
+
+/*** Team ***/
+.team-item {
+  position: relative;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.team-item .btn {
+  border-color: transparent;
+  box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+}
+
+@media screen and (min-width: 800px) {
+  div.row.grid-facts {
+    display: grid !important;
+    grid-template-columns: 300px 300px 300px 300px !important;
+
+  }
+
+  .youtube-videos {
+    display: grid !important;
+    grid-template-columns: 300px 300px 300px 300px !important;
+
+
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .youtube-videos {
+    margin-bottom: -1rem;
+    width: 560px;
+  }
+}
+
+
+/*** Section Title ***/
+.section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}

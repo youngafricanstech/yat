@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="/stylesheets/contact-from.css">
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+<section id="contact">
+  <div class="contact-box">
+    <div class="contact-links">
+      <h2>CONTACT</h2>
+      <div class="links">
+        <div class="link">
+          <a><img class="contact-image" src="/images/youtube.png" alt="youtube"></a>
+        </div>
+        <div class="link">
+          <a><img class="contact-image" src="/images/instagram.jpeg" alt="github"></a>
+        </div>
+        <div class="link">
+          <a href="https://web.facebook.com/Tech-Foundation-Builders-Academy-103560551676633" target="_blank"><img
+              class="contact-image" src="/images/facebook.png" alt="facebook"></a>
+        </div>
+        <div class="link">
+          <a><img class="contact-image" src="https://i.postimg.cc/NjLfyjPB/email.png" alt="email"></a>
+        </div>
+        <span style="color:rgb(255, 255, 255); font-size: 1em; ">info@youngafricanstech.org</span>
+        <span style="color:rgb(255, 255, 255); font-size: 1em; ">register@youngafricanstech.org</span>
+      </div>
+
+    </div>
+    <div class="contact-form-wrapper">
+      <div style="background-color: white; color: green; font-size: 16px; display:none;" id="success-delivey-message">
+        Your request was successful</div>
+      <form action="/contacts/send" name="register-form" method="POST" id="send-request">
+        <div class="form-item">
+          <input type="text" class="form-input" id="name-input" name="sender" required="">
+          <label>Name:</label>
+          <div style="color: red;" id="name-error"></div>
+          <!-- <p class="validation-error-text"></p> -->
+
+        </div>
+        <div class="form-item">
+          <input type="text" class="form-input" id="email-input" name="email" required="">
+          <label>Email:</label>
+          <div style="color: red;" id="email-error"></div>
+          <div style="color: red;" id="email-error-validation"></div>
+        </div>
+
+        <div class="form-item">
+          <input type="text" class="form-input" id="phone-input" name="phone" required="">
+          <label>Phone No:</label>
+          <div style="color: red;" id="phone-error"></div>
+        </div>
+        <div class="form-item">
+          <input type="text" class="form-input" id="subject-input" name="subject" required="">
+          <label>Subject:</label>
+          <div style="color: red;" id="subject-error"></div>
+        </div>
+        <div class="form-item">
+          <textarea id="message-input" class="form-input" name="message" required=""></textarea>
+          <label>Message:</label>
+          <div style="color: red;" id="message-error"></div>
+        </div>
+        <div class="g-recaptcha" data-sitekey="6LdYgEUdAAAAAG9b9WcyjDrokGw1HfzbCKlJ2FgI"></div>
+        <div style="color: red;" id="recaptcha-error"></div>
+        <br />
+        <input type="submit" id="post-comment" class="btn btn-primary" value="Submit">
+
+      </form>
+      <!-- <span>info@youngafricanstech.org</span>
+      <span>register@youngafricanstech.org</span> -->
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="/javascripts/my_custom.js"></script>
+</section>

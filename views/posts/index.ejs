@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog</title>
+</head>
+<body>
+	<%- include('../partials/header.ejs') %>
+<section class="our-blog">
+	<div class="container" style="margin-top: 36px;">
+		<div class="text-center">
+			<h2>Our <span>Blog</span></h2>
+			<p>Feel free to comment whatever that is on your mind, but don't forget to be respectful'</p>
+		</div>
+		<div class="row mt-5">
+			<% posts.forEach(post=> { %>
+			<div class="col-sm-4" style="padding-bottom: 20px;  
+  filter: drop-shadow(1px 1px 1px rgb(87, 78, 78));">
+				
+				<div class="card">
+					<div class="image-container" style="position: relative;height:280px;width: 100%;overflow: hidden; ">
+						<a href="/posts/<%=post.id%>/comments"><img src="<%= post.postImage %>"
+							alt="" class="post-img-responsive" style=" min-width:100%;
+  min-height:100%;
+  height:auto;
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translateY(-50%) translateX(-50%);"></a>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="#"><%=post.title %></a>
+						</h5>
+						<p class="date-author"><span style="color: green"><%=moment(post.createdAt).fromNow(); %></span>.  By: <span class="author" style="font-size:15px"><%=post.from%></span>
+						</p>
+						<p class="card-text">
+							<%= post.description %>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			
+<% });%>
+			
+		</div>
+		
+	</div>
+  
+  </section>
+</body>
+
+<style>  
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.mt-5{
+    margin-top: 5rem;
+}
+
+.our-blog{
+    background-color: #f8f9fa;
+    padding: 100px 0;
+}
+
+.container{
+    /* max-width: 960px; */
+    margin: 0 auto;
+	
+}
+
+
+/* .row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+	
+} */
+
+.text-center{
+    text-align: center;
+    font-size: 18px;
+}
+
+.text-center h2{
+    font-weight: 500;
+    font-size: 1.6em;
+}
+
+.text-center h2 span{
+    font-weight: 800;
+}
+
+.text-center p{
+    max-width: 500px;
+    margin: 0 auto;
+    color: #000000;
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+.col{
+    width: 33.3333333%;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.col .card{
+    width: 100%;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.col img{
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.col .card-body{
+    padding: 0 15px 15px 15px;
+    background-color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.card-body h5{
+    font-size: 24px;
+    margin: 7px 0;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.card p{
+    color: #000000;
+	padding-top: 10px;
+}
+
+.card-body .date-author span{
+    color: #e74c3c;
+}
+
+.card-body h5 a{
+    color: #222;
+}
+
+@media(min-width: 577px) and (max-width: 768px){
+    .col{
+        width: 50%;
+    }
+}
+
+@media(max-width: 576px){
+    .col{
+        width: 100%;
+    }
+}
+</style>
+</html>
+
+
+
+<!-- <main role="main">
+  <ul class="flexgrid columns-news">
+    <% posts.forEach(post => { %>
+    <li>
+      <a href="/posts/<%=post.id%>/comments">
+        <span class="grid-number"><%=post.title %></span>
+        <figure class="gallery-image">
+          <img
+            style="
+              display: block;
+              width: 30%;
+              height: 60%;
+              object-fit: cover;
+              transition: transform 400ms ease-out;
+            "
+            src="<%= post.postImage %>"
+          />
+          <figcaption>
+            <p class="post-from"><%= post.from%></p>
+            <h2 class="post-d">
+              <%= post.createdAt.toString().split(' ').slice(0, 4).join(' ');%>
+            </h2>
+            <h2 class="post-descr"><%= post.description %></h2>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    <% });%>
+  </ul>
+</main> -->

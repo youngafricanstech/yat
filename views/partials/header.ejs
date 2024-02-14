@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Education Meeting HTML5 Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="/stylesheets/fontawesome.css">
+  <link rel="stylesheet" href="/stylesheets/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="/stylesheets/owl.css">
+  <link rel="stylesheet" href="/stylesheets/lightbox.css">
+  <!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+</head>
+
+<body>
+
+  <!-- Sub Header -->
+  <!-- <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky" style="background-color: rgb(0, 60, 78);">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/" class="logo" style="margin-left: -1px;">
+              <img src="/images/yatlogo2.png" alt="YATA Logo" style="height: 90px; width: 90px;">
+              <div style="color: rgb(255, 255, 255); display: inline-block; margin-left: 5px;">YATA</div>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+              <li><a href="/pages/about">About Us</a></li>
+              <li class="scroll-to-section"><a href="/galleries">Galleries</a></li>
+              <li class="ha-sub">
+                <a href="/posts">Blogs</a>
+              </li>
+              <li class="scroll-to-section"><a href="/register/new">Register</a></li>
+              <li class="scroll-to-section"><a href="/courses">Courses</a></li>
+              <li class="scroll-to-section"><a href="/contactus">Contact Us</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="/javascripts/jquery.min.js"></script>
+
+
+  <script src="/javascripts/isotope.min.js"></script>
+  <script src="/javascripts/owl-carousel.js"></script>
+  <script src="/javascripts/lightbox.js"></script>
+  <script src="/javascripts/tabs.js"></script>
+  <script src="/javascripts/video.js"></script>
+  <script src="/javascripts/slick-slider.js"></script>
+  <!-- <script src="javascripts/custom.js"></script> -->
+  <script>
+    //according to loftblog tut
+    if ($('.menu-trigger').length) {
+      $(".menu-trigger").on('click', function () {
+        $(this).toggleClass('active');
+        $('.header-area .nav').slideToggle(200);
+      });
+    }
+
+
+    // Menu elevator animation
+    $('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function () {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          var width = $(window).width();
+          if (width < 991) {
+            $('.menu-trigger').removeClass('active');
+            $('.header-area .nav').slideUp(200);
+          }
+          $('html,body').animate({
+            scrollTop: (target.offset().top) - 80
+          }, 700);
+          return false;
+        }
+      }
+    });
+
+    // var checkSection = function checkSection() {
+    //   $('.section').each(function () {
+    //     var
+    //     $this = $(this),
+    //     topEdge = $this.offset().top - 80,
+    //     bottomEdge = topEdge + $this.height(),
+    //     wScroll = $(window).scrollTop();
+    //     if (topEdge < wScroll && bottomEdge > wScroll) {
+    //       var
+    //       currentId = $this.data('section'),
+    //       reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+    //       reqLink.closest('li').addClass('active').
+    //       siblings().removeClass('active');
+    //     }
+    //   });
+    // };
+
+    // $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+    //   e.preventDefault();
+    //   showSection($(this).attr('href'), true);
+    // });
+
+    // $(window).scroll(function () {
+    //   checkSection();
+    // });
+  </script>
+</body>
+
+</html>
+<!-- ***** Header Area End ***** -->

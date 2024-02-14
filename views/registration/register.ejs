@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Registration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/stylesheets/fontawesome.css">
+    <link rel="stylesheet" href="/stylesheets/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/stylesheets/owl.css">
+    <link rel="stylesheet" href="/stylesheets/lightbox.css">
+    <link rel="stylesheet" href="/stylesheets/registration.css">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+</head>
+
+<body>
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo" style="margin-left: -1px;">
+                            <img src="/images/yatlogo2.png" alt="YATA Logo" style="height: 90px; width: 90px;">
+                            <div style="color: white; display: inline-block; margin-left: 5px;">YATA</div>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+                            <li><a href="/pages/about">About Us</a></li>
+                            <li class="scroll-to-section"><a href="/galleries">Galleries</a></li>
+                            <li class="ha-sub">
+                                <a href="/posts">Blogs</a>
+                            </li>
+                            <li class="scroll-to-section"><a href="/register/new">Register</a></li>
+                            <li class="scroll-to-section"><a href="/courses">Courses</a></li>
+                            <li class="scroll-to-section"><a href="/contactus">Contact Us</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="form-body" style="padding-top: 4rem;">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3 class="d-flex justify-content-center">Parents Details</h3>
+                        <p class="d-flex justify-content-center">Fill in the data below.</p>
+                        <form action="/register/student" id='cform' class="requires-validation" novalidate
+                            method="POST">
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" name="email" placeholder="email address"
+                                    required>
+                                <div class="valid-feedback">Email field is valid!</div>
+                                <div class="invalid-feedback">Email field cannot be blank!</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="firstName" type="text" name="parent_firstname"
+                                        placeholder="Parent first name" required>
+                                    <div class="valid-feedback">First name field is valid!</div>
+                                    <div class="invalid-feedback">First name field cannot be blank!</div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" id="lastName" type="text" name="parent_lastname"
+                                        placeholder="Parent Last name" required>
+                                    <div class="valid-feedback">Last name field is valid!</div>
+                                    <div class="invalid-feedback">Last name field cannot be blank!</div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="col-md-12">
+                                <input class="form-control" id="phonenumber" type="tel" name="cellnumber"
+                                    placeholder="Phone Number" required>
+                                <div class="valid-feedback">phone Number field is valid!</div>
+                                <div class="invalid-feedback">phone Number field cannot be blank!</div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" type="text" name="country" placeholder="Country"
+                                        required>
+                                    <div class="valid-feedback">Country field is valid!</div>
+                                    <div class="invalid-feedback">Country field cannot be blank!</div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control" type="text" name="state" placeholder="State/Province"
+                                        required>
+                                    <div class="valid-feedback">State/Province field is valid!</div>
+                                    <div class="invalid-feedback">State/Province field cannot be blank!</div>
+                                </div>
+                            </div>
+
+
+                            <br />
+
+                            <h3 class="d-flex justify-content-center">Learner's Details</h3>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" name="childs_fullname"
+                                    placeholder="Child's Full name" required>
+                                <div class="valid-feedback">fullname field is valid!</div>
+                                <div class="invalid-feedback">fullname field cannot be blank!</div>
+                            </div>
+                            <br />
+                            <div class="row mx-auto d-flex justify-content-center">
+                                <div class="col-md-5 mb-5 mt-2">
+                                    <input class="form-control" id="age" type="number" name="child_age" min="10"
+                                        max="18" placeholder="Age" required>
+                                    <div class="valid-feedback">Age field is valid!</div>
+                                    <div class="invalid-feedback">Age field cannot be blank</div>
+                                </div>
+
+                                <div class="col-md-5 mb-5 mt-2">
+                                    <input class="form-control" name="grade" placeholder="Grade"
+                                        style="font-size: 16px;" required>
+                                    <div class="valid-feedback">Grade field is valid!</div>
+                                    <div class="invalid-feedback">Grade field cannot be blank!</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                                <input type="radio" class="btn-check" name="gender" value="Male" id="male"
+                                    autocomplete="off" required>
+                                <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                                <input type="radio" class="btn-check" name="gender" value="Female" id="female"
+                                    autocomplete="off" required>
+                                <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                                <div class="valid-feedback mv-up">You selected a gender!</div>
+                                <div class="invalid-feedback mv-up">Please select a gender!</div>
+                            </div>
+                            <br />
+
+
+                            <br />
+
+                            <div class="col-md-12 message-input">
+
+                                <div class="single-input-field">
+                                    <textarea placeholder="Leave a comment" name="message"
+                                        id="message-input"></textarea>
+                                </div>
+                                <div style="color: red;" id="message-error"></div>
+                                <br />
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <label class="form-check-label">I confirm that all data are correct</label>
+                                    <div class="invalid-feedback">Please confirm that the entered data are all correct!
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+
+                                    <label class="form-check-label">
+                                        <h4 style="font-size: 17px; color: rgb(240, 217, 8)">Important
+                                            Notice:</h4>
+                                        <br>
+                                        Upon successful submission, you will promptly
+                                        receive an automated email.
+                                        <br>
+                                        Please be advised that occasionally this email
+                                        may be directed to your spam or junk folder. If the email is not found in your
+                                        inbox, kindly check these folders for its
+                                        potential placement.
+                                        <br>
+                                        <br>
+
+                                        The email will include:
+
+                                        A confirmation message acknowledging the receipt of your application.
+                                        Links for your assessment video tutorials.
+                                        <br>
+                                        Should you not receive the email immediately, please verify that the correct
+                                        email address was provided during the
+                                        submission process.
+                                    </label>
+                                    <div class="invalid-feedback">Please confirm!
+                                    </div>
+                                </div>
+
+
+                                <br />
+
+                                <div class="g-recaptcha" data-sitekey="6LdYgEUdAAAAAG9b9WcyjDrokGw1HfzbCKlJ2FgI"></div>
+
+                                <div style="color: red;" id="recaptcha-error"></div>
+                                <br />
+
+
+                                <div id="messageBox" style="display:none;">
+                                    <p id="successmessage" style="color:green; font-size: 20px"></p>
+                                    <button id="closeMessageBtn">Close</button>
+                                </div>
+
+
+                                <div class="form-button mt-3">
+                                    <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/javascripts/jquery.min.js"></script>
+
+
+    <script src="/javascripts/isotope.min.js"></script>
+    <script src="/javascripts/owl-carousel.js"></script>
+    <script src="/javascripts/lightbox.js"></script>
+    <script src="/javascripts/tabs.js"></script>
+    <script src="/javascripts/video.js"></script>
+    <script src="/javascripts/register1.js"></script>
+
+    <script src="/javascripts/slick-slider.js"></script>
+    <!-- <script src="javascripts/custom.js"></script> -->
+
+</body>
+
+</html>
+<!-- ***** Header Area End ***** -->

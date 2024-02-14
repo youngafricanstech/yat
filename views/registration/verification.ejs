@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Registration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/stylesheets/fontawesome.css">
+    <link rel="stylesheet" href="/stylesheets/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/stylesheets/owl.css">
+    <link rel="stylesheet" href="/stylesheets/lightbox.css">
+    <link rel="stylesheet" href="/stylesheets/registration.css">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <title>Courses</title>
+</head>
+<%- include('../partials/header.ejs') %>
+
+    <body>
+        <div class="container">
+            <div class="row mx-auto" style="padding-top: 200px">
+                <p>Enter the verification number sent to your email:</p>
+
+                <!-- Add an ID to your form for easier selection -->
+                <form id="verificationForm" action="/register/verify" method="get">
+                    <label for="verificationNumber">Verification Number:</label>
+                    <input type="text" name="registrationcode" id="registrationcode" required>
+                    <input type="submit" type="submit">
+                </form>
+                <div id="resultMessage"></div>
+                <div>
+                    <%=message%>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+
+    </script>
+    <script src="/javascripts/jquery.min.js"></script>
+
+
+    <script src="/javascripts/isotope.min.js"></script>
+    <script src="/javascripts/tabs.js"></script>
+
+
+</html>

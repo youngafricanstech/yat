@@ -1,0 +1,190 @@
+/* comment starts here  */
+
+* {
+  box-sizing: border-box;
+}
+.wrap {
+  width: 640px;
+  margin: 50px auto;
+}
+.field {
+  position: relative;
+  margin-bottom: 10px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  display: block;
+  outline: none;
+  padding: 5px;
+}
+.field input:focus,
+.field textarea:focus {
+  border: 2px solid #eb7b03;
+}
+.field input:focus + label,
+.field textarea:focus + label {
+  display: block;
+}
+.field textarea {
+  height: 60px;
+}
+.field label {
+  width: 100%;
+  background-color: #eb7b03;
+  display: block;
+  color: #fff;
+  padding: 3px;
+  font-size: 12px;
+  font-weight: 300;
+  display: none;
+}
+h2 {
+  font-weight: 300;
+}
+.small {
+  width: 32%;
+  float: left;
+  margin-left: 2%;
+}
+.small:first-child {
+  margin-left: 0%;
+}
+.large {
+  float: left;
+  width: 100%;
+}
+::-webkit-input-placeholder {
+  font-weight: 300;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 300;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 300;
+}
+:-ms-input-placeholder {
+  font-weight: 300;
+}
+
+span.name {
+  color: rgb(0, 255, 13);
+}
+
+/* comment ends here  */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.our-blog {
+  background-color: #f8f9fa;
+  padding: 100px 0;
+}
+
+.container {
+  /* max-width: 960px; */
+  margin: 0 auto;
+}
+
+.row {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.text-center {
+  text-align: center;
+  font-size: 18px;
+}
+
+.text-center h2 {
+  font-weight: 500;
+  font-size: 1.6em;
+}
+
+.text-center h2 span {
+  font-weight: 800;
+}
+
+.text-center p {
+  max-width: 500px;
+  margin: 0 auto;
+  color: #000000;
+  line-height: 1.5;
+  font-size: 1.1em;
+}
+
+.col {
+  width: 33.3333333%;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.col .card {
+  width: 100%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.col img {
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+
+.col .card-body {
+  padding: 0 15px 15px 15px;
+  background-color: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.card-body h5 {
+  font-size: 24px;
+  margin: 7px 0;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.card p {
+  color: #000000;
+  padding-top: 10px;
+}
+
+.card-body .date-author span {
+  color: #e74c3c;
+}
+
+.card-body h5 a {
+  color: #222;
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .col {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col {
+    width: 100%;
+  }
+}

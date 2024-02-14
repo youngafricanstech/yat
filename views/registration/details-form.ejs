@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Registration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/stylesheets/fontawesome.css">
+    <link rel="stylesheet" href="/stylesheets/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/stylesheets/owl.css">
+    <link rel="stylesheet" href="/stylesheets/lightbox.css">
+    <link rel="stylesheet" href="/stylesheets/registration.css">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+</head>
+
+<body>
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo" style="margin-left: -1px;">
+                            <img src="/images/yatlogo2.png" alt="YATA Logo" style="height: 90px; width: 90px;">
+                            <div style="color: white; display: inline-block; margin-left: 5px;">YATA</div>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+                            <li><a href="/pages/about">About Us</a></li>
+                            <li class="scroll-to-section"><a href="/galleries">Galleries</a></li>
+                            <li class="ha-sub">
+                                <a href="/posts">Blogs</a>
+                            </li>
+                            <li class="scroll-to-section"><a href="/register/new">Register</a></li>
+                            <li class="scroll-to-section"><a href="/courses">Courses</a></li>
+                            <li class="scroll-to-section"><a href="/contactus">Contact Us</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <style>
+        #input-group {
+            position: relative;
+        }
+
+        .datepicker {
+            padding-right: 30px;
+            position: relative;
+            /* Adjust as needed */
+        }
+
+        .date-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            /* Adjust as needed */
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 2;
+            /* Ensure the icon is above the input */
+        }
+
+        .ui-datepicker-calendar .ui-state-tuesday,
+        .ui-datepicker-calendar .ui-state-wednesday {
+            background: #007bff;
+            border: 1px solid #0056b3;
+        }
+
+
+
+        .container-fluid {
+            background-color: #ffffff;
+            /* Set your desired background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Set box shadow for a card-like appearance */
+            max-width: 90%;
+            /* Adjust the width as needed */
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li strong {
+            color: #007bff;
+            /* Set your desired text color for strong elements */
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: "yy-mm-dd", // Set the date format
+                beforeShowDay: function (date) {
+                    var currentDate = new Date();
+                    var day = date.getDay();
+
+                    // Disable past Tuesdays and Wednesdays
+                    if (date < currentDate || (date.getDate() === currentDate.getDate() && date.getMonth() === currentDate.getMonth() && date.getFullYear() === currentDate.getFullYear())) {
+                        return [false, 'ui-state-disabled'];
+                    }
+
+                    // Add specific classes for Tuesdays and Wednesdays
+                    if (day == 2) {
+                        return [true, 'ui-state-tuesday'];
+                    } else if (day == 3) {
+                        return [true, 'ui-state-wednesday'];
+                    }
+                    return [false, ''];
+                }
+            });
+
+            $("#date-icon").click(function () {
+                $("#datepicker").datepicker("show");
+            });
+        });
+
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <ul>
+            <li><strong>Parent First Name:</strong>
+                <%= userData.parent_firstname %>
+            </li>
+            <li><strong>Parent Last Name:</strong>
+                <%= userData.parent_lastname %>
+            </li>
+            <li><strong>Country:</strong>
+                <%= userData.country %>
+            </li>
+            <li><strong>State:</strong>
+                <%= userData.state %>
+            </li>
+            <li><strong>Email:</strong>
+                <%= userData.email %>
+            </li>
+            <li><strong>Cell Number:</strong>
+                <%= userData.cellnumber %>
+            </li>
+            <li><strong>Child's Full Name:</strong>
+                <%= userData.childs_fullname %>
+            </li>
+            <li><strong>Child's Age:</strong>
+                <%= userData.child_age %>
+            </li>
+            <li><strong>Gender:</strong>
+                <%= userData.gender %>
+            </li>
+            <li><strong>Grade:</strong>
+                <%= userData.grade %>
+            </li>
+            <li><strong>Registration Code:</strong>
+                <%= userData.registrationcode %>
+            </li>
+            <li><strong>Created At:</strong>
+                <%= userData.createdAt.getFullYear() + "-" + (userData.createdAt.getMonth() + 1) + "-" +
+                    userData.createdAt.getDate(); %>
+            </li>
+        </ul>
+    </div>
+    <div class="form-body" style="padding-top: 4rem;">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3 class="d-flex justify-content-center">Parents Details</h3>
+                        <p class="d-flex justify-content-center">Fill in the data below.</p>
+                        <form action="/register/send" id='cform' class="requires-validation" novalidate method="POST">
+
+                            <div class="container mt-5"
+                                style="padding-left: 0px; padding-right:0px; margin-top: 1rem !important">
+                                <h6 style="color: white;">Select Your Interview Date</h6>
+                                <p>We only do interviews on Tuesday's and Wednesday's</p>
+
+
+                                <div id="dateValidationError" style="color: red; margin-top: 5px;"></div>
+
+                                <div class="input-group" style="margin-top: -2.4rem">
+                                    <input class="form-control" type="text" name="interviewdate" id="datepicker"
+                                        class="form-control datepicker" placeholder="Select date" required>
+                                    <i class="far fa-calendar-alt date-icon" id="date-icon"></i>
+                                    <div class="valid-feedback">Interview Date field is valid!</div>
+                                    <div class="invalid-feedback">Interview Date field cannot be blank!</div>
+
+                                </div>
+
+                                <input type="hidden" name="email" value="<%=userData.email%>">
+                                <input type="hidden" name="parent_firstname" value="<%=userData.parent_firstname%>">
+                                <input type="hidden" name="parent_lastname" value="<%=userData.parent_lastname%>">
+                                <input type="hidden" name="childs_fullname" value="<%=userData.childs_fullname%>">
+
+
+                            </div>
+
+
+
+                            <br />
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+
+                                <label class="form-check-label">
+                                    <h4 style="font-size: 17px; color: rgb(240, 217, 8)">Important
+                                        Notice:</h4>
+                                    <br>
+                                    Upon successful submission, you will promptly
+                                    receive an automated email.
+                                    <br>
+                                    Please be advised that occasionally this email
+                                    may be directed to your spam or junk folder. If the email is not found in your
+                                    inbox, kindly check these folders for its
+                                    potential placement.
+                                    <br>
+                                    <br>
+
+                                    The email will include:
+
+                                    A confirmation message acknowledging the receipt of your interview booking and a
+                                    link to access the video interview/assessment.
+
+                                </label>
+                                <div class="invalid-feedback">Please confirm!
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <div class="g-recaptcha" data-sitekey="6LdYgEUdAAAAAG9b9WcyjDrokGw1HfzbCKlJ2FgI">
+                            </div>
+                            <div style="color: red;" id="recaptcha-error"></div>
+                            <br />
+
+
+                            <div id="messageBox" style="display:none;">
+                                <p id="successmessage" style="color:green; font-size: 20px"></p>
+                                <button id="closeMessageBtn">Close</button>
+                            </div>
+
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Book</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/javascripts/jquery.min.js"></script>
+
+
+    <script src="/javascripts/isotope.min.js"></script>
+    <script src="/javascripts/owl-carousel.js"></script>
+    <script src="/javascripts/lightbox.js"></script>
+    <script src="/javascripts/tabs.js"></script>
+    <script src="/javascripts/video.js"></script>
+    <script src="/javascripts/register.js"></script>
+
+    <script src="/javascripts/slick-slider.js"></script>
+    <!-- <script src="javascripts/custom.js"></script> -->
+
+</body>
+
+</html>
+<!-- ***** Header Area End ***** -->

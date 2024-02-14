@@ -1,0 +1,227 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <title>Blog</title>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <section class="our-blog">
+            <div class="container" style="margin-top: 36px;">
+                <div class="text-center">
+                    <h2>Our <span>Blog</span></h2>
+                    <p>Feel free to comment whatever that is on your mind, but don't forget to be respectful'</p>
+                </div>
+                <div class="row mt-5">
+                   
+                        <div class="col-lg-7">
+
+                            <div class="card">
+                                <div class="image-container"
+                                    >
+                                    <img src="<%= post.postImage %>" alt=""
+                                            class="post-img-responsive" >
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="#">
+                                            <%=post.title %>
+                                        </a>
+                                    </h5>
+                                    <p class="date-author"><span style="color: green">
+                                            <%=moment(post.createdAt).fromNow(); %>
+                                        </span>. By: <span class="author" style="font-size:15px">
+                                            <%=post.from%>
+                                        </span>
+                                    </p>
+                                    <p class="card-text">
+                                        <%= post.description %>
+                                    </p>
+                                </div>
+                                    <% if(user && user.email=="chukwumakingsley1@gmail.com" ) { %>
+                                        <div class="course_card_footer"><a class="nav-item" href="/posts/<%=post.id%>/delete">Delete</a><a class="nav-item"
+                                                href=href="/posts/<%=post.id%>/edit">Edit</a></div>
+                                        </div>
+                                        <% }%>
+
+                            </div>
+                           
+                        </div>
+                        <div class="wrap">
+                            <h2>Please leave a comment:</h2>
+
+                                <div class="commentform">
+                                            <div style="background-color: white; color: green; font-size: 16px; display:none;" id="success-delivey-message">Your
+                                                request was successful</div>
+                                                
+
+                                    <form action="/posts/<%=post._id%>/comment" method="post" id="commentform">
+                                        <div id="post-id" style="display: none" ><%= post.id %></div>
+                                        <div class="field small">
+                                            <input id="name" type="text" name="name" placeholder="Your name">
+                                            <label for="name">Your name</label>
+                                            <div id="name-error"></div>
+                                        </div>
+                                       
+
+                                        <div class="field large">
+                                            <textarea id="comment" name="description" placeholder="Your comment"></textarea>
+                                            <label for="comment">Your comment</label>
+                                            <div id="message-error"></div>
+                                        </div>
+                                        
+                                        <!-- <div class="field small">
+                                            <div class="g-recaptcha" data-sitekey="6LdYgEUdAAAAAG9b9WcyjDrokGw1HfzbCKlJ2FgI"></div>
+                                        </div> -->
+                                        <div class="field small">
+                                            <div class="text-center">
+                                                <div class="g-recaptcha" data-sitekey="6LdYgEUdAAAAAG9b9WcyjDrokGw1HfzbCKlJ2FgI"></div>
+                                                <div id="recaptcha-error"></div>
+                                                <button type="submit" class="btn btn-primary" id="make-comment">Submit</button>
+                                            </div>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <section class="comment-section">
+                            <div class="container text-center">
+                            <div id="comment-counter"><%= post.comments.length %></div>
+
+                                <div id="comment-container">
+                                    <% post.comments.forEach(item=> { %>
+                                        <div class="comment-lists">
+                                            <div class="row">
+                                                <div class="col-sm">
+                                                    <div class="name-date">
+                                                        <span class="name"><%=item.name%></span>: <span class="date"><%= moment(item.createdAt).fromNow(); %></span>
+                                                    </div>
+                                                    <p class="comment-description"><%=item.description%></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <hr>
+                                    <% });%>    
+                                    </div>
+                                </div>
+                            </div>
+                        </section>         
+                    </div>
+
+
+        </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>   
+        
+        $("#make-comment").on("click", function (event) {
+                id = document.getElementById("post-id").innerHTML;
+                console.log(id);
+                event.preventDefault();
+                var name = document.getElementById("name").value;
+                var message = document.getElementById("comment").value;
+
+                var response = grecaptcha.getResponse();
+
+                var name_passed = false;
+                var message_passed = false;
+                var response_passed = false;
+
+                if (name == "") {
+                    var the_value = document.getElementById("name-error");
+
+                    the_value.innerHTML = "Please enter your name";
+                    name_passed = true;
+                } else if (message == "") {
+                    var the_value = document.getElementById("message-error");
+
+                    the_value.innerHTML == ""
+                        ? (the_value.innerHTML = "Please enter your message")
+                        : (the_value.innerHTML = "");
+                    message_passed = true;
+                } else if (response == "") {
+                    var the_value = document.getElementById("recaptcha-error");
+
+                    the_value.innerHTML == ""
+                        ? (the_value.innerHTML = "Please verify that you are not a robot")
+                        : (the_value.innerHTML = "");
+                    response_passed = true;
+                }
+
+                if (name_passed != true) {
+                    var the_value = document.getElementById("name-error");
+
+                    the_value.innerHTML = "";
+                }
+                if (message_passed != true) {
+                    var the_value = document.getElementById("message-error");
+
+                    the_value.innerHTML = "";
+                }
+
+                if (response_passed != true) {
+                    var the_value = document.getElementById("recaptcha-error");
+
+                    the_value.innerHTML = "";
+                }
+                if (
+                    name_passed != true &&
+                    message_passed != true &&
+                    response_passed != true
+                ) {
+                    var f = $("#commentform");
+                    $.ajax({
+                        url: "/posts/" + id + "/comment",
+                        method: "POST",
+                        data: f.serialize(),
+                        success: function (result) {
+                             $("#comment-counter").text(
+                                parseInt($("#comment-counter").text()) + 1
+                            ); //updated total
+
+                            $("#comment-container").prepend(`<div class="comments-body">
+                                <div class="comment-lists">
+                                <div class="name-date">${$("#name").val()}</div>
+                                <span class="comment-date">${moment(new Date()).fromNow()}</span>
+                                <p class="comment-description">${$("#comment").val()}</p>
+                            </div>
+                        </div>`);
+                           
+
+                            $("#name").val("");
+                            $("textarea#comment").val("");
+                            grecaptcha.reset();
+                            $("#success-delivey-message").show(() => {
+                                setTimeout(() => {
+                                    $("#success-delivey-message")
+                                        .fadeTo(500, 1)
+                                        .slideUp(500, () => {
+                                            $("#success-delivey-message").hide();
+                                        });
+                                }, 10000);
+                            });
+                        },
+                    });
+                }
+            });
+
+        </script>
+            <!-- <script src="/javascripts/post_comment.js"></script> -->
+
+</body>
+    <link rel="stylesheet" href="/stylesheets/posts-comments.css">
+
+
+</html>

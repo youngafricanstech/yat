@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <title>YAT Academy</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="/stylesheets/fontawesome.css">
+  <link rel="stylesheet" href="/stylesheets/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="/stylesheets/owl.css">
+  <link rel="stylesheet" href="/stylesheets/lightbox.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+  <!--
+
+
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+
+</head>
+
+<body>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/" class="logo" style="margin-left: -1px;">
+              <img src="/images/yatlogo2.png" alt="YATA Logo" style="height: 90px; width: 90px;">
+              <div style="color: white; display: inline-block; margin-left: 5px;">YATA</div>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+              <li><a href="/pages/about">About Us</a></li>
+              <li class="scroll-to-section"><a href="/galleries">Galleries</a></li>
+              <li class="ha-sub">
+                <a href="/posts">Blogs</a>
+              </li>
+              <li class="scroll-to-section"><a href="/register/new">Register</a></li>
+              <li class="scroll-to-section"><a href="/courses">Courses</a></li>
+              <li class="scroll-to-section"><a href="/contactus">Contact Us</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+      <source src="/images/yatlandingvideotwo.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="caption">
+              <h6>Welcome to</h6>
+              <h6>Young Africans Technology.</h6>
+              <h2 style="margin-right: 8rem;">Home of Tech for kids and teens</h2>
+              <p>Where kids and teenagers are given the opportunity to acquire the best tech skills
+                in coding. We go into the poor communities, find the young talented kids/teenagers and develop their
+                potentials.</p>
+              <!-- <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#">Changing Lives</a></div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+
+            <% courses.forEach(function(course) { %>
+              <div class="item" style="padding-top: 15px">
+                <div class="icon">
+                  <img src="<%= course.logo %>" />
+                </div>
+                <div class="down-content">
+                  <h4>
+                    <%= course.title%>
+                  </h4>
+                  <p id="read-more" class="descripton">
+                    <%= course.description;%>
+                  </p>
+                </div>
+              </div>
+
+              <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Categories Start -->
+  <div class="container-xxl py-5 category" style="margin-top: 10rem;">
+    <div class="container" style="padding-top: 8rem">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
+        <h1 class="mb-5">Courses Categories</h1>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-12 col-md-6">
+          <div class="row g-3">
+            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+              <a class="position-relative d-block overflow-hidden" href="">
+                <img class="img-fluid" src="/images/yat9.jpg" alt="">
+                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                  <h5 class="m-0">Game Development</h5>
+                  <small class="text-primary">With Python and JavaScript</small>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+              <a class="position-relative d-block overflow-hidden" href="">
+                <img class="img-fluid" src="/images/yat11.jpg" alt="">
+                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                  <h5 class="m-0">Robotics</h5>
+                  <small class="text-primary">and Basic PC repair</small>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+          <a class="position-relative d-block overflow-hidden" href="">
+            <img class="img-fluid" src="/images/yat1.jpg" alt="">
+            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+              <h5 class="m-0">Web App Development</h5>
+              <small class="text-primary">Django and ExpressJs</small>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+          <a class="position-relative d-block overflow-hidden" href="">
+            <img class="img-fluid" src="/images/yat12.jpg" alt="">
+            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+              <h5 class="m-0">HTML and CSS </h5>
+              <small class="text-primary">DOM and Event Handling</small>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+          <a class="position-relative d-block overflow-hidden" href="">
+            <img class="img-fluid" src="/images/yat23.jpg" alt="" style="height: 265px">
+            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+              <h5 class="m-0">Artificial intelligence</h5>
+              <small class="text-primary">Artificial intelligence is the simulation of human intelligence processes by
+                machines, especially computer systems.
+                Specific applications of AI include expert systems, natural language processing, speech recognition and
+                machine vision</small>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+          <a class="position-relative d-block overflow-hidden" href="">
+            <img class="img-fluid" src="/images/yat12.jpg" alt="">
+            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+              <h5 class="m-0">Video Editing</h5>
+              <small class="text-primary">49 Courses</small>
+            </div>
+          </a>
+        </div> -->
+        <!-- <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+          <a class="position-relative d-block h-100 overflow-hidden" href="">
+            <img class="img-fluid position-absolute w-100 h-100" src="/images/yat16.jpg" alt="" style="object-fit: cover;">
+            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
+              <h5 class="m-0">Online Marketing</h5>
+              <small class="text-primary">49 Courses</small>
+            </div>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- Categories Start -->
+
+
+
+  <!-- Team Start -->
+  <div class="container-xxl py-5" style="">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <!-- <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6> -->
+        <h1 class="mb-5">Volunteer Instructors</h1>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="team-item bg-light">
+            <div class="overflow-hidden">
+              <img class="img-fluid" src="/images/kingsley.jpg" alt="">
+            </div>
+            <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+              <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+              </div>
+            </div> -->
+            <div class="text-center p-4">
+              <h5 class="mb-0" style="font-size:1em">Kingsley Chukwuma</h5>
+              <br />
+              <h6
+                style="line-height: 1.2; color: #02245B; font-size: 0.8em; font-weight: bolder; background-color: rgb(235, 222, 222); ">
+                Cape Town, South
+                Africa</h6>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="team-item bg-light">
+            <div class="overflow-hidden">
+              <img class="img-fluid" style="margin-top: -56px;" src="/images/destiny.jpg" alt="">
+            </div>
+            <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+              <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+              </div>
+            </div> -->
+            <div class="text-center p-4">
+              <h5 class="mb-0">Destinee Adams</h5>
+              <br />
+              <h6
+                style="line-height: 1.2; color: #02245B; font-size: 16px; font-weight: bolder; background-color: rgb(235, 222, 222); ">
+                New York, USA</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="team-item bg-light">
+            <div class="overflow-hidden">
+              <img class="img-fluid" src="/images/danielmugshot.jpg" alt="">
+            </div>
+
+            <div class="text-center p-4">
+              <h5 class="mb-0">Daniel Ciocîrlan</h5>
+              <small>Technical Advisor</small>
+              <br />
+              <h6
+                style="line-height: 1.2; color: #02245B; font-size: 16px; font-weight: bolder; background-color: rgb(235, 222, 222); ">
+                Romania, Europe</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Team End -->
+
+
+  <section class="our-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" style="width: 100%">
+          <div class="row">
+            <!-- <div class="col-lg-12">
+              <h2>A Few Facts About Our Academy</h2>
+            </div> -->
+            <div class="col-lg-6">
+              <div class="row grid-facts">
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">81</div>
+                    <div class="count-title">Online Students</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="count-area-content">
+                    <div class="count-digit">31</div>
+                    <div class="count-title">Online Instructors</div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="count-area-content new-students">
+                    <div class="count-digit">3</div>
+                    <div class="count-title">Continents</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6" style="width: 100%">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="row grid-facts">
+                    <div class="col-12">
+                      <div class="count-area-content">
+                        <div class="count-digit">13</div>
+                        <div class="count-title">Countries</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="count-area-content">
+                        <div class="count-digit">34</div>
+                        <div class="count-title">Onsite Students</div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-12">
+                      <div class="count-area-content new-students">
+                        <div class="count-digit">2</div>
+                        <div class="count-title">Physical Centers</div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-lg-12">
+              <h2 style="font-size: 1.3em">Watch and Subscribe to Our Youtube</h2>
+            </div> -->
+          </div>
+          <!-- <div class=" youtube-videos col-lg-6 align-self-center text-align center">
+
+            <div style="width: 60%; min-width: 300px;">
+
+              <div style="background-color: whitesmoke; padding: 15px; margin: 0 0 4% 2% ;">
+
+                <div style="position: relative; width: 100%; padding-top: 56.25%;">
+
+
+                  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/l-bwEK5feGI" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div style="width: 60%; min-width: 300px;">
+              <div style="background-color: whitesmoke; padding: 15px; margin: 0 0 4% 2%;">
+                <div style="position: relative; width: 100%; padding-top: 56.25%;">
+                  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/n989bMf1SGQ" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+                </div>
+              </div>
+            </div>
+            <div style="width: 60%; min-width: 300px;">
+              <div style="background-color: whitesmoke;; padding: 15px; margin: 0 0 4% 2%;">
+                <div style="position: relative; width: 100%; padding-top: 56.25%;">
+                  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/Gj1llVvpTzo" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+                </div>
+              </div>
+            </div>
+
+             <div style="width: 60%; min-width: 300px;">
+          <div style="background-color: whitesmoke; padding: 15px; margin: 0 0 4% 2%;">
+            <div style="position: relative; width: 100%; padding-top: 56.25%;">
+              <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/MAMp-qpjdfE" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            </div>
+          </div>
+        </div> -->
+        </div>
+  </section>
+  <%- include('./contactform/_contacts.ejs') %>
+
+    <!-- <section class="contact-us" id="contact">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3">
+          
+          <div class="right-info">
+            
+            <ul>
+              <li>
+                <h6>Phone Number</h6>
+                <span>010-020-0340</span>
+              </li>
+              <li>
+                <h6>Email Address</h6>
+                <span>info@meeting.edu</span>
+              </li>
+              <li>
+                <h6>Street Address</h6>
+                <span>Rio de Janeiro - RJ, 22795-008, Brazil</span>
+              </li>
+              <li>
+                <h6>Website URL</h6>
+                <span>www.meeting.edu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
+          <br>
+          Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+          <br>
+          Distibuted By: <a href="https://themewagon.com" target="_blank" title="Build Better UI, Faster">ThemeWagon</a>
+        </p>
+    </div>
+  </section> -->
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="/javascripts/jquery.min.js"></script>
+    <!-- <script src="/javascripts/bootstrap.bundle.min.js"></script> -->
+
+    <script src="javascripts/isotope.min.js"></script>
+    <script src="javascripts/owl-carousel.js"></script>
+    <script src="javascripts/lightbox.js"></script>
+    <script src="javascripts/tabs.js"></script>
+    <script src="javascripts/video.js"></script>
+    <script src="javascripts/slick-slider.js"></script>
+    <script src="javascripts/custom.js"></script>
+    <script>
+      //according to loftblog tut
+      $('.nav li:first').addClass('active');
+
+      var showSection = function showSection(section, isAnimate) {
+        var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+        if (isAnimate) {
+          $('body, html').animate({
+            scrollTop: reqSectionPos
+          },
+            800);
+        } else {
+          $('body, html').scrollTop(reqSectionPos);
+        }
+
+      };
+
+        // var checkSection = function checkSection() {
+        //   $('.section').each(function () {
+        //     var
+        //     $this = $(this),
+        //     topEdge = $this.offset().top - 80,
+        //     bottomEdge = topEdge + $this.height(),
+        //     wScroll = $(window).scrollTop();
+        //     if (topEdge < wScroll && bottomEdge > wScroll) {
+        //       var
+        //       currentId = $this.data('section'),
+        //       reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+        //       reqLink.closest('li').addClass('active').
+        //       siblings().removeClass('active');
+        //     }
+        //   });
+        // };
+
+        // $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+        //   e.preventDefault();
+        //   showSection($(this).attr('href'), true);
+        // });
+
+        // $(window).scroll(function () {
+        //   checkSection();
+        // });
+    </script>
+</body>
+
+</body>
+
+</html>

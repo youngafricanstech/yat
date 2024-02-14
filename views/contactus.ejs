@@ -1,0 +1,449 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <title>Contact Us</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+    <section class="contact-page-sec">
+      <div class="container" style="padding-top: 100px;">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-map-marked"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h2>address</h2>
+                  <span>59303 Mqha Road, Kuyasa, Khayelitsha</span>
+                  <span>Cape Town, South Africa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h2>E-mail</h2>
+                  <span>info@youngafricanstech.org</span>
+                  <span>register@youngafricanstech.org</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h2>School Hour</h2>
+                  <span>Mon - Sat 10:00 am - 6.30 pm</span>
+                  <span>Cell: +27849614744</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="background-color: rgb(1, 90, 87)">
+          <div class="col-md-8">
+            <div class="contact-page-form" method="post">
+              <h2 style="color: white;">Get in Touch</h2>
+              <div style="background-color: white; color: rgb(0, 85, 18); font-size: 16px; display:none;"
+                id="success-delivey-message">Your request was successful</div>
+
+              <form action="/contacts/send" name="register-form" method="POST" id="send-request">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-input-field">
+                      <input type="text" placeholder="Your Name" id="name-input" name="sender" />
+                    </div>
+                    <div style="color: red;" id="name-error"></div>
+
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-input-field">
+                      <input type="email" placeholder="E-mail" name="email" id="email-input" required />
+                    </div>
+                    <div style="color: red;" id="email-error"></div>
+                    <div style="color: red;" id="email-error-validation"></div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-input-field">
+                      <input type="text" placeholder="Phone Number" name="phone" id="phone-input" />
+                    </div>
+                    <div style="color: red;" id="phone-error"></div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-input-field">
+                      <input type="text" placeholder="Subject" name="subject" id="subject-input" />
+                    </div>
+                    <div style="color: red;" id="subject-error"></div>
+                  </div>
+                  <div class="col-md-12 message-input">
+                    <div class="single-input-field">
+                      <textarea placeholder="Write Your Message" name="message" id="message-input"></textarea>
+                    </div>
+                    <div style="color: red;" id="message-error"></div>
+                    <br />
+
+                  </div>
+                  <br />
+
+                  <div class="g-recaptcha" data-sitekey="6LdYgEUdAAAAAG9b9WcyjDrokGw1HfzbCKlJ2FgI"></div>
+
+                  <div style="color: red;" id="recaptcha-error"></div>
+                  <br />
+                  <div class="single-input-fieldsbtn">
+                    <input type="submit" value="Send Now" id="send-contact" />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="contact-page-map">
+              <iframe
+                src="https://www.google.com/maps/d/embed?mid=1TWESYzah-xsinbAuPAoYUGo151c&ie=UTF8&msa=0&ll=-33.94734699999998%2C18.423385999999994&spn=0.136706%2C0.219727&z=12&output=embed"
+                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+</body>
+
+<script>
+  $('#send-contact').on('click', function (event) {
+    event.preventDefault();
+    var name = document.getElementById("name-input").value;
+    var email = document.getElementById("email-input").value;
+    var message = document.getElementById("message-input").value;
+    var phone = document.getElementById("phone-input").value;
+    var subject = document.getElementById("subject-input").value;
+    var response = grecaptcha.getResponse();
+    var name_passed = false;
+    var email_passed = false;
+    var email_validation_passed = false;
+    var message_passed = false;
+    var phone_passed = false;
+    var subject_passed = false;
+    var response_passed = false;
+
+    atpos = email.indexOf("@");
+    dotpos = email.lastIndexOf(".");
+
+    // var all_passed = false;
+    // if (
+    //   name === "" &&
+    //   email === "" &&
+    //   phone === "" &&
+    //   subject === "" &&
+    //   message === "" &&
+    //   response === ""
+    // ) {
+    //   var name_dom = document.getElementById("name-error");
+
+    //   name_dom.innerHTML = "Please enter your name";
+
+    //   var email_dom = document.getElementById("email-error");
+
+    //   email_dom.innerHTML = "Please enter your email";
+
+    //   var phone_dom = document.getElementById("phone-error");
+
+    //   phone_dom.innerHTML = "Please enter your number";
+
+    //   var subject_dom = document.getElementById("subject-error");
+
+    //   subject_dom.innerHTML = "Please enter your subject";
+
+    //   var message_dom = document.getElementById("message-error");
+
+    //   message_dom.innerHTML = "Please enter your message";
+
+    //   var recaptcha_dom = document.getElementById("recaptcha-error");
+
+    //   recaptcha_dom.innerHTML = "Please select recaptcha";
+    //   return (
+    //     name_dom.innerHTML,
+    //     email_dom.innerHTML,
+    //     phone_dom.innerHTML,
+    //     subject_dom.innerHTML,
+    //     message_dom.innerHTML,
+    //     recaptcha_dom.innerHTML,
+    //     (all_passed = true)
+    //   );
+    // }
+
+    if (name == "") {
+      var the_value = document.getElementById("name-error");
+
+      the_value.innerHTML = "Please enter your name";
+      name_passed = true;
+    } else {
+      var the_value = document.getElementById("name-error");
+
+      the_value.innerHTML = "";
+    }
+
+    if (email == "") {
+      var the_value = document.getElementById("email-error");
+
+      the_value.innerHTML = "Please enter your email";
+      email_passed = true;
+    } else if (atpos < 1 || dotpos - atpos < 2) {
+      var the_value = document.getElementById("email-error-validation");
+
+      the_value.innerHTML = "Please enter a valid email address";
+      email_validation_passed = true;
+    } else {
+      var the_value = document.getElementById("email-error-validation");
+      the_value.innerHTML = "";
+    }
+
+    if (email != "") {
+      var the_value = document.getElementById("email-error");
+      the_value.innerHTML = "";
+    }
+
+    var found = phone.search(
+      /^(\+{1}\d{2,3}\s?[(]{1}\d{1,3}[)]{1}\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}$/
+    );
+    if (found > -1 && phone.length > 9) {
+      var the_value = document.getElementById("phone-error");
+      the_value.innerHTML = "";
+    } else {
+      var the_value = document.getElementById("phone-error");
+
+      the_value.innerHTML = "Please enter a valid phone number";
+
+      phone_passed = true;
+    }
+
+    if (subject == "") {
+      var the_value = document.getElementById("subject-error");
+
+      the_value.innerHTML = "Please enter your subject";
+      subject_passed = true;
+    } else {
+      var the_value = document.getElementById("subject-error");
+
+      the_value.innerHTML = "";
+    }
+
+    if (message == "") {
+      var the_value = document.getElementById("message-error");
+
+      the_value.innerHTML = "Please enter your Message";
+      message_passed = true;
+    } else {
+      var the_value = document.getElementById("message-error");
+
+      the_value.innerHTML = "";
+    }
+
+    if (response == "") {
+      var the_value = document.getElementById("recaptcha-error");
+
+      the_value.innerHTML = "Please enter your recaptcha";
+      response_passed = true;
+    } else {
+      var the_value = document.getElementById("recaptcha-error");
+
+      the_value.innerHTML = "";
+    }
+
+    if (name_passed != true && email_passed != true && message_passed != true && phone_passed != true && subject_passed != true && response_passed != true) {
+
+      var f = $("#send-request");
+      $.ajax({
+        url: "/contacts/send",
+        method: 'POST',
+        data: f.serialize(),
+        success: function (result) {
+
+          $("#name-input").val('');
+          $("#email-input").val('');
+          $("#phone-input").val('');
+          $("#subject-input").val('');
+          $("textarea#message-input").val('');
+          grecaptcha.reset();
+
+          $("#success-delivey-message").show(() => {
+            setTimeout(() => {
+              $("#success-delivey-message").fadeTo(500, 1).slideUp(500, () => {
+
+                $("#success-delivey-message").hide();
+              })
+            }, 10000)
+          });
+
+
+
+        }
+      });
+    }
+
+
+  });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+  section {
+    padding: 60px 0;
+    min-height: 100vh;
+  }
+
+  .contact-info {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-info-icon {
+    margin-bottom: 15px;
+  }
+
+  .contact-info-item {
+    background: #071c34;
+    padding: 30px 0px;
+  }
+
+  .contact-page-sec .contact-page-form h2 {
+    color: #071c34;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .contact-page-form .col-md-6.col-sm-6.col-xs-12 {
+    padding-left: 0;
+  }
+
+  .contact-page-form.contact-form input {
+    margin-bottom: 5px;
+  }
+
+  .contact-page-form.contact-form textarea {
+    height: 110px;
+  }
+
+  .contact-page-form.contact-form input[type="submit"] {
+    background: #071c34;
+    width: 150px;
+    border-color: #071c34;
+  }
+
+  .contact-info-icon i {
+    font-size: 48px;
+    color: #fda40b;
+  }
+
+  .contact-info-text p {
+    margin-bottom: 0px;
+  }
+
+  .contact-info-text h2 {
+    color: #fff;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .contact-info-text span {
+    color: #999999;
+    font-size: 16px;
+    font-weight: ;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .contact-page-form input {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #f9f9f9;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .contact-page-form .message-input {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .single-input-field textarea {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #f9f9f9;
+    width: 100%;
+    height: 120px;
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+
+  .single-input-fieldsbtn input[type="submit"] {
+    background: #fda40b none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 10px 0;
+    text-transform: capitalize;
+    width: 150px;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .single-input-fieldsbtn input[type="submit"]:hover {
+    background: #071c34;
+    transition: all 0.4s ease-in-out 0s;
+    border-color: #071c34
+  }
+
+  .single-input-field h4 {
+    color: #464646;
+    text-transform: capitalize;
+    font-size: 14px;
+  }
+
+  .contact-page-form {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .contact-page-map {
+    margin-top: 36px;
+  }
+
+  .contact-page-form form {
+    padding: 20px 15px 0;
+  }
+</style>
+
+</html>
